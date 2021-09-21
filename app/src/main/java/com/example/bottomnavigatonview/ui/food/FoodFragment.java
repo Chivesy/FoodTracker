@@ -88,19 +88,15 @@ public class FoodFragment extends Fragment implements AdapterView.OnItemSelected
         // Adding items into productList from food_data.txt
         try {
             readFoodData("All");
-
             // Error was caught within readFoodData();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         //creating recyclerview adapter
         adapter = new ProductAdapter(getActivity(), productList);
-
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
-
 
         // gives trash button function to execute
         adapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
@@ -118,7 +114,6 @@ public class FoodFragment extends Fragment implements AdapterView.OnItemSelected
         } catch (IOException e) {
             e.printStackTrace();
         }
-
          */
 
         return root;
@@ -132,19 +127,12 @@ public class FoodFragment extends Fragment implements AdapterView.OnItemSelected
 
         // Toast.makeText(getActivity().getApplicationContext(), productList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
     }
-
-
-
-
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String category = (String) parent.getItemAtPosition(position);
         updateProductList(category);
         adapter.notifyDataSetChanged();
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }
@@ -159,7 +147,6 @@ public class FoodFragment extends Fragment implements AdapterView.OnItemSelected
             e.printStackTrace();
         }
     }
-
     // Reads a file of input foods and adds it to the productList to be displayed
     // File Format
     // *            -- indicates next 4 lines are product, category, quantity, and purchase date
@@ -199,23 +186,25 @@ public class FoodFragment extends Fragment implements AdapterView.OnItemSelected
                 switchData = 0; // Reset SwitchData that indicates product, category, quantity, and date
                 mdrawableName = "no_image"; // what image to pull, defaults to no_image unless a hardcoded example
 
-                // Hard Coded examples for bread and ground beef
-                if (temp_product.equals("bread") || temp_product.equals("Bread")) {
+                temp_product = temp_product.toLowerCase();
+
+                // Hard Coded examples for some basic items.
+                if (temp_product.equals("bread")){
                     mdrawableName = "bread";
                 }
-                if (temp_product.equals("ground beef") || temp_product.equals("Ground Beef") || temp_product.equals("Ground beef")) {
+                if (temp_product.equals("ground beef")){
                     mdrawableName = "ground_beef";
                 }
-                if (temp_product.equals("apple") || temp_product.equals("Apple") || temp_product.equals("Apples") || temp_product.equals("apples")) {
+                if (temp_product.equals("apple")) {
                     mdrawableName = "apple";
                 }
-                if (temp_product.equals("broccoli") || temp_product.equals("Broccoli")) {
+                if (temp_product.equals("broccoli")) {
                     mdrawableName = "broccoli";
                 }
-                if (temp_product.equals("carrot") || temp_product.equals("Carrot") || temp_product.equals("Carrots") || temp_product.equals("carrots")) {
+                if (temp_product.equals("carrot")) {
                     mdrawableName = "carrots";
                 }
-                if (temp_product.equals("spinach") || temp_product.equals("Spinach")) {
+                if (temp_product.equals("spinach")) {
                     mdrawableName = "spinach";
                 }
 
