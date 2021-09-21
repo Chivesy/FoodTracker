@@ -1,6 +1,6 @@
-**CSCI 5115 User Interface Design, Implementation and Evaluation**
-**Group 9 Project -- Food Tracker**
-**Members:** Joseph Larson, Madelyn Harvieux, Marysa Hak, and Rohan Gholkar
+**CSCI 5115 User Interface Design, Implementation and Evaluation**  
+**Group 9 Project -- Food Tracker**  
+**Members:** Joseph Larson, Madelyn Harvieux, Marysa Hak, and Rohan Gholkar  
 
 Steps to run:
 1) Clone repository
